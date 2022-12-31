@@ -1,0 +1,7 @@
+requests
+parsel
+lxml
+beautifulsoup4
+google-search-results
+openpyxl
+rich==13.0.0
