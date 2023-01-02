@@ -3,5 +3,12 @@ parsel
 lxml
 beautifulsoup4
 google-search-results
-openpyxl
-rich==13.0.0
+openpyxl~=3.0.10
+rich==12.6.0
+plotly~=5.11.0
+ip2geotools~=0.1.6
+typer~=0.7.0
+pandas~=1.5.1
+typing~=3.7.4.3
+setuptools~=65.5.1
+rich-click
