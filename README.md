@@ -1,6 +1,6 @@
 # Map My Citations
 
-Map my citations create a annotated map and summary files of all your citations obtained from your Google Scholar page.
+Map your citations create a annotated map and summary files of all your citations obtained from your Google Scholar page.
 
 ## Prerequisites 
 - Create an account at https://serpapi.com/ to search through Google Scholar
