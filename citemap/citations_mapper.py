@@ -114,7 +114,7 @@ def citations_mapper(author_id: str, serp_api_token: str, output_dir: Path):
                 results_have_more_pages: bool = True
                 log.info("Processing {paper} :: Cited by {cite_count}".format(
                     paper=article["title"], cite_count=article['cited_by']['value']))
-                if article_cites == 0:
+                if article_cites == 0 or article['cited_by']['value'] is None:
                     log.info("No citations for this paper. Skipping...")
                     continue
 
@@ -136,7 +136,10 @@ def citations_mapper(author_id: str, serp_api_token: str, output_dir: Path):
                             null):
                         search_result = GoogleSearch(cited_by_param).get_dict()
                     # Check to see if there are more pages to look through. If no more results, break.
-                    if search_result['search_information']['organic_results_state'] == "Fully empty":
+                    if 'search_information' not in search_result:
+                        results_have_more_pages = False
+                        break
+                    elif search_result['search_information']['organic_results_state'] == "Fully empty":
                         results_have_more_pages = False
                         break
                     else:
